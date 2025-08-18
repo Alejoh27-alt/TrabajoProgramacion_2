@@ -1,10 +1,10 @@
-package model;
+package co.edu.uniquindio.trabajoUno.model;
 
 public class Propietario {
-    public String nombre;
-    public String email;
-    public String celular;
-    public String cedula;
+    private String nombre;
+    private String email;
+    private String celular;
+    private String cedula;
 
     public Propietario(String nombre, String email, String celular, String cedula) {
         this.nombre = nombre;
@@ -35,5 +35,15 @@ public class Propietario {
     }
     public void setCelular(String celular) {
         this.celular = celular;
+    }
+
+    @Override
+    public String toString() {
+        return "Propietario{" +
+                "cedula='" + cedula + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", email='" + email + '\'' +
+                ", celular='" + celular + '\'' +
+                '}';
     }
 }

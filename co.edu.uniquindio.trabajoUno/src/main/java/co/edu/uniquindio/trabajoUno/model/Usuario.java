@@ -1,7 +1,7 @@
-package model;
+package co.edu.uniquindio.trabajoUno.model;
 
 public class Usuario {
-    public int edad;
+    private int edad;
 
     public Usuario(int edad) {
         this.edad = edad;
@@ -13,4 +13,10 @@ public class Usuario {
         this.edad = edad;
     }
 
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "edad=" + edad +
+                '}';
+    }
 }

@@ -1,71 +1,57 @@
 package co.edu.uniquindio.trabajoUno.model;
-import java.util.List;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class EmpresaTransporte {
     private String nombre;
 
-    private List<Propietario> propietariolist = new ArrayList<>();
-    private List<Usuario> usuariolist = new ArrayList<>();
-    private List<VehiculoCarga> vehiculoCargaList = new ArrayList<>();
-    private List<VehiculoTransporte> vehiculoTransporteList = new ArrayList<>();
+    private List<VehiculoCarga> listaVehiculosCarga = new ArrayList<>();
+    private List<VehiculoTransporte> listaVehiculosTransporte = new ArrayList<>();
+    private List<Propietario> listaPropietarios = new ArrayList<>();
 
-    public EmpresaTransporte(String nombre) {
-        this.nombre = nombre;
+    public EmpresaTransporte() {
     }
+
     public String getNombre() {
         return nombre;
     }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public List<Propietario> getPropietariolist() {
-        return propietariolist;
+    public List<VehiculoCarga> getListaVehiculosCarga() {
+        return listaVehiculosCarga;
     }
 
-    public void setPropietariolist(List<Propietario> propietariolist) {
-        this.propietariolist = propietariolist;
-    }
-    public List<Usuario> getUsuariolist() {
-        return usuariolist;
-    }
-    public void setUsuariolist(List<Usuario> usuariolist) {
-        this.usuariolist = usuariolist;
-    }
-    public List<VehiculoCarga> getVehiculoCargaList() {
-        return vehiculoCargaList;
+    public void setListaVehiculosCarga(List<VehiculoCarga> listaVehiculosCarga) {
+        this.listaVehiculosCarga = listaVehiculosCarga;
     }
 
-    public List<VehiculoTransporte> getVehiculoTransporteList() {
-        return vehiculoTransporteList;
+    public List<VehiculoTransporte> getListaVehiculosTransporte() {
+        return listaVehiculosTransporte;
     }
 
-    public void setVehiculoCargaList(List<VehiculoCarga> vehiculoCargaList) {
-        this.vehiculoCargaList = vehiculoCargaList;
+    public void setListaVehiculosTransporte(List<VehiculoTransporte> listaVehiculosTransporte) {
+        this.listaVehiculosTransporte = listaVehiculosTransporte;
     }
 
-    public void setVehiculoTransporteList(List<VehiculoTransporte> vehiculoTransporteList) {
-        this.vehiculoTransporteList = vehiculoTransporteList;
+    public List<Propietario> getListaPropietarios() {
+        return listaPropietarios;
     }
 
-    public void CrearPropietario (String nombre, String email, String celular, String cedula){
-        Propietario propietario = new Propietario(nombre, email, celular, cedula);
-        propietariolist.add(propietario);
-    }
-    public void CrearUsuario (int edad){
-        Usuario usuario = new Usuario(edad);
-        usuariolist.add(usuario);
-    }
-    public void CrearVehiculoTransporte (int maximoPasajero, String color, String placa, String marca, String modelo){
-        VehiculoTransporte vehiculoTransporte = new VehiculoTransporte(maximoPasajero, color, placa, marca, modelo);
-        vehiculoTransporteList.add(vehiculoTransporte);
-    }
-    public void CrearVehiculoCarga (Double capacidadCarga, int numeroEje, String color, String placa, String marca, String modelo){
-        VehiculoCarga vehiculoCarga = new VehiculoCarga(capacidadCarga, numeroEje, color, placa, marca, modelo);
-        vehiculoCargaList.add(vehiculoCarga);
-
+    public void setListaPropietarios(List<Propietario> listaPropietarios) {
+        this.listaPropietarios = listaPropietarios;
     }
 
+    public void crearPropietarioVehiculoCarga(String propietario, String vehiculo) {
+        Propietario propietarioObj = new Propietario();
+        propietarioObj.setNombre(propietario);
+        VehiculoCarga vehiculoObj = new VehiculoCarga();
+        vehiculoObj.setPlaca(vehiculo);
+        propietarioObj.setVehiculo(vehiculoObj);
+        listaPropietarios.add(propietarioObj);
+    }
 
 }

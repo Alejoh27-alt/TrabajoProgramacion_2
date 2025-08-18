@@ -1,32 +1,37 @@
 package co.edu.uniquindio.trabajoUno.model;
 
 public class VehiculoCarga extends Vehiculo {
-    private Double capacidadCarga;
-    private int numeroEje;
+    private double capacidadCarga;
+    private int numeroEjes;
 
-    public VehiculoCarga(Double capacidadCarga, int numeroEje, String color, String placa, String marca, String modelo) {
-        super(placa, color, marca, modelo);
-        this.capacidadCarga = capacidadCarga;
-        this.numeroEje = numeroEje;
+    public VehiculoCarga() {
     }
-    public Double getCapacidadCarga() {
+
+
+    public VehiculoCarga(String placa, String modelo, String marca, String color, double capacidadCarga) {
+        super(placa, modelo, marca, color);
+        this.capacidadCarga = capacidadCarga;
+    }
+
+    public double getCapacidadCarga() {
         return capacidadCarga;
     }
-    public void setCapacidadCarga(Double capacidadCarga) {
+
+    public void setCapacidadCarga(double capacidadCarga) {
         this.capacidadCarga = capacidadCarga;
     }
-    public int getNumeroEje() {
-        return numeroEje;
+
+    public int getNumeroEjes() {
+        return numeroEjes;
     }
-    public void setNumeroEje(int numeroEje) {
-        this.numeroEje = numeroEje;
+
+    public void setNumeroEjes(int numeroEjes) {
+        this.numeroEjes = numeroEjes;
     }
 
     @Override
-    public String toString() {
-        return "VehiculoCarga{" +
-                "capacidadCarga=" + capacidadCarga +
-                ", numeroEje=" + numeroEje +
-                '}';
+    public void encender() {
+        System.out.println("Endenciendo el vehiculo para cargarlo");
     }
+
 }

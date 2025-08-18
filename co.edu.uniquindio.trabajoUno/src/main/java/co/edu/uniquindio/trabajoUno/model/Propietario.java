@@ -1,49 +1,86 @@
 package co.edu.uniquindio.trabajoUno.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Propietario {
     private String nombre;
+    private String numeroIdentificacion;
     private String email;
-    private String celular;
-    private String cedula;
+    private String numeroCelular;
+    private Vehiculo vehiculo;
 
-    public Propietario(String nombre, String email, String celular, String cedula) {
-        this.nombre = nombre;
-        this.email = email;
-        this.celular = celular;
-        this.cedula = cedula;
+    private List<VehiculoCarga> listaVehiculosCarga = new ArrayList<>();
+
+    EmpresaTransporte ownedByEmpresaTransporte;
+
+    public Propietario() {
     }
+
+    public Propietario(String nombre, String numeroIdentificacion, String email, String numeroCelular, Vehiculo vehiculo) {
+        this.nombre = nombre;
+        this.numeroIdentificacion = numeroIdentificacion;
+        this.email = email;
+        this.numeroCelular = numeroCelular;
+        this.vehiculo = vehiculo;
+    }
+
     public String getNombre() {
         return nombre;
     }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public String getEmail() {
-        return email;
+
+    public String getNumeroIdentificacion() {
+        return numeroIdentificacion;
     }
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    public String getCedula() {
-        return cedula;
-    }
-    public void setCedula(String cedula) {
-        this.cedula = cedula;
-    }
-    public String getCelular() {
-        return celular;
-    }
-    public void setCelular(String celular) {
-        this.celular = celular;
+
+    public void setNumeroIdentificacion(String numeroIdentificacion) {
+        this.numeroIdentificacion = numeroIdentificacion;
     }
 
     @Override
     public String toString() {
         return "Propietario{" +
-                "cedula='" + cedula + '\'' +
-                ", nombre='" + nombre + '\'' +
+                "nombre='" + nombre + '\'' +
+                ", numeroIdentificacion='" + numeroIdentificacion + '\'' +
                 ", email='" + email + '\'' +
-                ", celular='" + celular + '\'' +
+                ", numeroCelular='" + numeroCelular + '\'' +
                 '}';
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getNumeroCelular() {
+        return numeroCelular;
+    }
+
+    public void setNumeroCelular(String numeroCelular) {
+        this.numeroCelular = numeroCelular;
+    }
+
+    public Vehiculo getVehiculo() {
+        return vehiculo;
+    }
+
+    public void setVehiculo(Vehiculo vehiculo) {
+        this.vehiculo = vehiculo;
+    }
+
+    public List<VehiculoCarga> getListaVehiculosCarga() {
+        return listaVehiculosCarga;
+    }
+
+    public void setListaVehiculosCarga(List<VehiculoCarga> listaVehiculosCarga) {
+        this.listaVehiculosCarga = listaVehiculosCarga;
+    }
+
 }

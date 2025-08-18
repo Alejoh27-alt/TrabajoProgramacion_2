@@ -1,24 +1,27 @@
 package co.edu.uniquindio.trabajoUno.model;
 
 public class VehiculoTransporte extends Vehiculo {
-    private int maximoPasajero;
+    private int numeroMaximoPasajeros;
 
-    public VehiculoTransporte(int maximoPasajero, String color, String placa, String marca, String modelo) {
-        super(color, placa, marca, modelo);
-        this.maximoPasajero = maximoPasajero;
+    public VehiculoTransporte() {
     }
 
-    public int getMaximoPasajero() {
-        return maximoPasajero;
+    public VehiculoTransporte(String placa, String modelo, String marca, String color, int numeroMaximoPasajeros) {
+        super(placa, modelo, marca, color);
+        this.numeroMaximoPasajeros = numeroMaximoPasajeros;
     }
-    public void setMaximoPasajero(int maximoPasajero) {
-        this.maximoPasajero = maximoPasajero;
+
+    public int getNumeroMaximoPasajeros() {
+        return numeroMaximoPasajeros;
+    }
+
+    public void setNumeroMaximoPasajeros(int numeroMaximoPasajeros) {
+        this.numeroMaximoPasajeros = numeroMaximoPasajeros;
     }
 
     @Override
-    public String toString() {
-        return "VehiculoTransporte{" +
-                "maximoPasajero=" + maximoPasajero +
-                '}';
+    public void encender() {
+        System.out.println("No me encendio......ayuda");
     }
+
 }

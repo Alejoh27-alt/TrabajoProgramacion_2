@@ -1,20 +1,32 @@
 package co.edu.uniquindio.trabajoUno;
 
+import Factory.ModelFactory;
 import co.edu.uniquindio.trabajoUno.model.EmpresaTransporte;
 
 
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import co.edu.uniquindio.trabajoUno.model.*;
+
 public class Main {
-    static EmpresaTransporte empresaTransporte = new EmpresaTransporte("La carreta");
     public static void main(String[] args) {
+        ModelFactory modelFactory = ModelFactory.getInstance();
+        EmpresaTransporte empresaTransporte = modelFactory.inicializarDatos();
+        crearPropietarioVehiculoCarga(modelFactory);
+        calcularTotalPasajerosTransportados(empresaTransporte);
+    }
 
-
-        }
+    private static void calcularTotalPasajerosTransportados(EmpresaTransporte empresaTransporte) {
 
     }
-    public static EmpresaTransporte inicializarDatos(){
 
-
+    private static void crearPropietarioVehiculoCarga(ModelFactory modelFactory) {
+        String propietario = "Pepe";
+        String vehiculo = "ARM 2232";
+        modelFactory.crearPropietarioVehiculoCarga(propietario, vehiculo);
+    }
+//    private static void crearPropieatioVehiculoTransporte(ModelFactory modelFactory) {
+//        String propietario = "Alejo";
+//        String vehiculo = "AAA 2232";
+//        modelFactory.crearPropieatioVehiculoTransporte(propietario, vehiculo);
+//    }
 }
